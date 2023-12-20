@@ -2,10 +2,13 @@ echo "installing poetry / virtualenv from pip on the main python version"
 pip install poetry
 read -p "Enter your project name: " name
 echo "Creating project:"
+cd ../
 poetry new -n --src $name
+cp starter/Dockerfile starter/.pre-commit-config.yaml $name/
+cat starter/pyproject.toml >> $name/pyproject.toml
 cd $name
 poetry config virtualenvs.in-project true
-poetry env use $version
+poetry env use python$version
 source .venv/bin/activate
 poetry add black ruff pytest pytest-sugar pre-commit coverage ipykernel --group dev
 echo ".env" >> .gitignore
@@ -23,3 +26,5 @@ git push -u origin main
 
 echo "installing pre-commit"
 pre-commit install
+
+
