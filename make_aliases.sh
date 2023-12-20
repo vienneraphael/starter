@@ -1,0 +1,11 @@
+echo "alias prtc='poetry run coverage run -m pytest && poetry run coverage report -m'" >> $HOME/.bashrc
+echo "alias gs='git status'" >> $HOME/.bashrc
+echo "alias gap='git add .'" >> $HOME/.bashrc
+echo "alias gau='git add -u'" >> $HOME/.bashrc
+echo "alias gc='git commit -m'" >> $HOME/.bashrc
+echo "alias gb='git branch'" >> $HOME/.bashrc
+echo "alias gp='git push'" >> $HOME/.bashrc
+echo "alias sa='source .venv/bin/activate'" >> $HOME/.bashrc
+echo "alias ga='git add'" >> $HOME/.bashrc
+echo "alias gch='git checkout'" >> $HOME/.bashrc
+echo "alias gchb='git checkout -b'" >> $HOME/.bashrc
