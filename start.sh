@@ -27,4 +27,4 @@ git push -u origin main
 echo "installing pre-commit"
 pre-commit install
 
-
+rm -r ../starter
