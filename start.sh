@@ -8,7 +8,7 @@ cp starter/Dockerfile starter/.pre-commit-config.yaml $name/
 cat starter/pyproject.toml >> $name/pyproject.toml
 cd $name
 poetry config virtualenvs.in-project true
-poetry env use 3.11
+poetry env use $(python -V)
 source .venv/bin/activate
 poetry add black ruff pytest pytest-sugar pre-commit coverage ipykernel --group dev
 echo ".env" >> .gitignore
