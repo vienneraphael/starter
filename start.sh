@@ -1,3 +1,4 @@
+pip install --upgrade pip
 echo "installing poetry / virtualenv from pip on the main python version"
 pip install poetry
 read -p "Enter your project name: " name
@@ -8,7 +9,7 @@ cp starter/Dockerfile starter/.pre-commit-config.yaml $name/
 cat starter/pyproject.toml >> $name/pyproject.toml
 cd $name
 poetry config virtualenvs.in-project true
-poetry env use $(python -V)
+poetry env use $(python --version 2>&1 | awk '{print $2}')
 source .venv/bin/activate
 poetry add black ruff pytest pytest-sugar pre-commit coverage ipykernel --group dev
 echo ".env" >> .gitignore
